@@ -46,11 +46,11 @@ const [currentMonth, setCurrentMonth] = useState(new Date())
 const [selectedDate, setSelectedDate] = useState<string | null>(null)
 
 useEffect(() => {
-  fetch("http://localhost:5000/api/all-users")
+  fetch("http://localhost:5000.onrender.com/api/all-users")
     .then((res) => res.json())
     .then((users: User[]) => setEmployees(users))
 
-  fetch("http://localhost:5000/api/all-work-updates")
+  fetch("http://localhost:5000.onrender.com/api/all-work-updates")
     .then((res) => res.json())
     .then((updates: WorkUpdate[]) => {
       updates.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())

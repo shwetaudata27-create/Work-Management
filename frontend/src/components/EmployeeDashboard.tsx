@@ -51,18 +51,8 @@ export function EmployeeDashboard({ user, onLogout }: EmployeeDashboardProps) {
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
   const { toast } = useToast()
 
-  const API_URL = "http://localhost:5000/api"
+  const API_URL = "http://localhost:5000.onrender.com/api"
 
-     // Fetch work updates for user from backend
-  // const fetchWorkUpdates = async () => {
-  //   try {
-  //     const res = await fetch(`${API_URL}/work-updates/${user.username}`)
-  //     const data = await res.json()
-  //     setWorkUpdates(data)
-  //   } catch (err) {
-  //     console.error("Failed to fetch work updates", err)
-  //   }
-  // }
   const fetchWorkUpdates = async () => {
   try {
     const res = await fetch(`${API_URL}/work-updates/${user.username}`);

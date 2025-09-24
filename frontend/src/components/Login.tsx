@@ -28,7 +28,7 @@ export function Login({ onLogin }: LoginProps) {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/login", {
+      const res = await fetch("http://localhost:5000.onrender.com/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -90,7 +90,7 @@ const handleTypeSelection = async () => {
 
   try {
     // Save the type in backend
-    await fetch(`http://localhost:5000/api/set-type/${authenticatedUser.username}`, {
+    await fetch(`http://localhost:5000.onrender.com/api/set-type/${authenticatedUser.username}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ type: selectedType }),
