@@ -1,4 +1,4 @@
-# Node modules
+# Node modules (frontend & backend)
 node_modules/
 frontend/node_modules/
 backend/node_modules/
@@ -11,7 +11,7 @@ backend/.env
 # Logs
 *.log
 
-# OS-specific files
+# OS-specific
 .DS_Store
 
 # Build outputs
