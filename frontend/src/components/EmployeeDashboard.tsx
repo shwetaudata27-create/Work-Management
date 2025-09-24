@@ -51,8 +51,8 @@ export function EmployeeDashboard({ user, onLogout }: EmployeeDashboardProps) {
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
   const { toast } = useToast()
 
-  const API_URL = "http://localhost:5000.onrender.com/api"
-
+  const API_URL = process.env.NEXT_PUBLIC_API_URL
+  
   const fetchWorkUpdates = async () => {
   try {
     const res = await fetch(`${API_URL}/work-updates/${user.username}`);

@@ -45,12 +45,14 @@ const [employees, setEmployees] = useState<User[]>([])
 const [currentMonth, setCurrentMonth] = useState(new Date())
 const [selectedDate, setSelectedDate] = useState<string | null>(null)
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 useEffect(() => {
-  fetch("http://localhost:5000.onrender.com/api/all-users")
+  fetch(`${API_URL}/api/all-users`)
     .then((res) => res.json())
     .then((users: User[]) => setEmployees(users))
 
-  fetch("http://localhost:5000.onrender.com/api/all-work-updates")
+  fetch(`${API_URL}/api/all-work-updates`)
     .then((res) => res.json())
     .then((updates: WorkUpdate[]) => {
       updates.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
